@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     modules: ['nuxt-socket-io'],
     io: {
         sockets: [{
-            url: 'http://localhost:4000'
+            url: 'http://localhost:3001'
         }]
     }
 })

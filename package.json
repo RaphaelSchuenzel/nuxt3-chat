@@ -12,6 +12,8 @@
     "pug-plain-loader": "^1.1.0"
   },
   "dependencies": {
+    "ioredis": "^5.1.0",
+    "luxon": "^2.4.0",
     "nuxt-socket-io": "^3.0.9",
     "socket.io": "^4.5.1"
   }

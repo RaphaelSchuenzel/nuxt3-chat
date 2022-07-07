@@ -1,4 +1,7 @@
 import { Server } from 'socket.io'
+import { DateTime } from 'luxon'
+
+const SOCKET_PORT = 3001
 
 const io = new Server({})
 
@@ -8,7 +11,15 @@ io.on('connection', (socket) => {
     socket.on('message', (msg) => {
         console.log('received msg: ' + msg)
 
-        io.emit('message', msg)
+        const date = DateTime.now()
+
+        const message = {
+            date,
+            username: msg.username,
+            message: msg.content
+        }
+
+        io.emit('message', message)
     })
 
     socket.on('disconnect', () => {
@@ -16,4 +27,4 @@ io.on('connection', (socket) => {
     })
 })
 
-io.listen(4000)
+io.listen(SOCKET_PORT)
