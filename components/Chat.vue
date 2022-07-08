@@ -3,9 +3,12 @@
     p Welcome, {{ username }}
 
     #messages
-        p(
+        .message(
             v-for="message in messages"
-        ) {{ message }}
+        )
+            p Date: {{ message.date }}
+            p Name: {{ message.username }}
+            p Message: {{ message.content }}
 
     div
         input(
